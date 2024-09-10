@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
             std::cout << "Enter the Credits in course " << i + 1<< ": ";
             std::cin >> credits[i];
         }
-        std::cout << "\nCGPA = " << calculate_gpa(grades,credits,num_of_courses) << "\n";
+        std::cout << "\nGPA = " << calculate_gpa(grades,credits,num_of_courses) << "\n";
     }
     else
     {
