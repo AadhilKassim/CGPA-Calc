@@ -75,22 +75,22 @@ GPA = 8.60
 ## TODO
 
 ### Planned or Future Updates
-![ ] **Enhanced Input Validation**:
+- [ ] **Enhanced Input Validation**:
    - Implement comprehensive checks to ensure all input values are within valid ranges and handle unexpected inputs gracefully.
 
-![ ] **Support for Different GPA Scales**:
+- [ ] **Support for Different GPA Scales**:
    - Add options to handle various grading scales and systems (e.g., 4.0 scale, 5.0 scale).
 
-![ ] **User-Friendly Interface**:
+- [ ] **User-Friendly Interface**:
    - Develop a graphical user interface (GUI) version of the calculator for improved usability.
 
-![ ] **File Input/Output**:
+- [ ] **File Input/Output**:
    - Allow users to input data from files and output results to files for batch processing.
 
-![ ] **Error Handling Improvements**:
+- [ ] **Error Handling Improvements**:
    - Enhance error messages and logging for better debugging and user feedback.
 
-![ ] **Advanced Calculations**:
+- [ ] **Advanced Calculations**:
    - Include features for weighted GPA calculations and GPA projections based on current performance.
 
 ## Contributing
