@@ -75,7 +75,7 @@ GPA = 8.60
 ## TODO
 
 ### Planned or Future Updates
-- [ ] **Enhanced Input Validation**:
+- [*] **Enhanced Input Validation**:
    - Implement comprehensive checks to ensure all input values are within valid ranges and handle unexpected inputs gracefully.
 
 - [ ] **Support for Different GPA Scales**:
