@@ -23,6 +23,12 @@ int main(int argc, char *argv[])
         {
             std::cout << "\nEnter the GPA in semester " << i + 1 << ": ";
             std::cin >> gpa[i];
+            
+            if (gpa[i] > 10 || gpa[i] < 0)
+            {
+                std::cerr << "\nInvalid input! Enter value between 0-10";
+            }
+            
             std::cout << "Enter the Credits in semester " << i + 1<< ": ";
             std::cin >> credits[i];
         }
