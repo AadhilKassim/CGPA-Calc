@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     if (std::string(argv[1]) == "-c")
     {
         int num_of_sem;
-        
+
         std::cout << "Enter number of Semesters: ";
         std::cin >> num_of_sem;
 
@@ -21,24 +21,32 @@ int main(int argc, char *argv[])
 
         for (size_t i = 0; i < num_of_sem; i++)
         {
-            std::cout << "\nEnter the GPA in semester " << i + 1 << ": ";
-            std::cin >> gpa[i];
-            
-            if (gpa[i] > 10 || gpa[i] < 0)
+            bool valid_input = false;
+            while (!valid_input)
             {
-                std::cerr << "\nInvalid input! Enter value between 0-10";
+                std::cout << "\nEnter the GPA for semester " << i + 1 << ": ";
+                std::cin >> gpa[i];
+
+                if (gpa[i] < 0 || gpa[i] > 10)
+                {
+                    std::cerr << "Invalid input! Enter value between 0 and 10.\n";
+                }
+                else
+                {
+                    valid_input = true;
+                }
             }
-            
-            std::cout << "Enter the Credits in semester " << i + 1<< ": ";
+
+            std::cout << "Enter the Credits for semester " << i + 1 << ": ";
             std::cin >> credits[i];
         }
-        
-        std::cout << "CGPA = " << calculate_cgpa(gpa,credits,num_of_sem) << "\n";
+
+        std::cout << "CGPA = " << calculate_cgpa(gpa, credits, num_of_sem) << "\n";
     }
     else if (std::string(argv[1]) == "-g")
     {
         int num_of_courses;
-        
+
         std::cout << "Enter number of courses: ";
         std::cin >> num_of_courses;
 
@@ -47,12 +55,26 @@ int main(int argc, char *argv[])
 
         for (size_t i = 0; i < num_of_courses; i++)
         {
-            std::cout << "\nEnter the Grade in course " << i + 1 << ": ";
-            std::cin >> grades[i];
-            std::cout << "Enter the Credits in course " << i + 1<< ": ";
+            bool valid_input = false;
+            while (!valid_input)
+            {
+                std::cout << "\nEnter the Grade for course " << i + 1 << ": ";
+                std::cin >> grades[i];
+
+                if (grades[i] < 0 || grades[i] > 10)
+                {
+                    std::cerr << "Invalid input! Enter value between 0 and 10.\n";
+                }
+                else
+                {
+                    valid_input = true;
+                }
+            }
+
+            std::cout << "Enter the Credits for course " << i + 1 << ": ";
             std::cin >> credits[i];
         }
-        std::cout << "\nGPA = " << calculate_gpa(grades,credits,num_of_courses) << "\n";
+        std::cout << "\nGPA = " << calculate_gpa(grades, credits, num_of_courses) << "\n";
     }
     else
     {
