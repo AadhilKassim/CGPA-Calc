@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 2)
     {
-        std::cerr << "Usage: " << argv[0] << " <integer>\n";
+        std::cerr << "Usage: " << argv[0] << " \033[32m-g\033[0m | \033[32m-c\033[0m\n";
         return 1;
     }
 
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
                 if (gpa[i] < 0 || gpa[i] > 10)
                 {
-                    std::cerr << "Invalid input! Enter value between 0 and 10.\n";
+                    std::cerr << "\033[31mInvalid input!\033[0m Enter value between 0 and 10.\n";
                 }
                 else
                 {
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
                 if (grades[i] < 0 || grades[i] > 10)
                 {
-                    std::cerr << "Invalid input! Enter value between 0 and 10.\n";
+                    std::cerr << "\033[31mInvalid input!\033[0m Enter value between 0 and 10.\n";
                 }
                 else
                 {
@@ -75,11 +75,6 @@ int main(int argc, char *argv[])
             std::cin >> credits[i];
         }
         std::cout << "\nGPA = " << calculate_gpa(grades, credits, num_of_courses) << "\n";
-    }
-    else
-    {
-        std::cerr << "Invalid option. Usage: " << argv[0] << " -g | -c\n";
-        return 1;
     }
     return 0;
 }
