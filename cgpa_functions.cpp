@@ -2,6 +2,7 @@
 #include <vector>
 #include "cpga.hpp"
 
+// Function to calculate CGPA
 double calculate_cgpa(const std::vector<double>& gpas, const std::vector<int>& credits, int num_semesters)
 {
     double total_weighted_gpa = 0;
@@ -25,6 +26,7 @@ double calculate_cgpa(const std::vector<double>& gpas, const std::vector<int>& c
     return total_weighted_gpa / total_credits;
 }
 
+// Function to calculate GPA
 double calculate_gpa(const std::vector<double>& grades, const std::vector<int>& credits, int num_courses) {
     double total_weighted_grade_points = 0;
     int total_credits = 0;
@@ -45,28 +47,30 @@ double calculate_gpa(const std::vector<double>& grades, const std::vector<int>& 
     return total_weighted_grade_points / total_credits;
 }
 
-
+// Function to handle input and call the CGPA calculation function
 void cgpa_calc()
 {
     int num_of_sem;
 
+    // Get the number of semesters
     std::cout << "Enter number of Semesters: ";
     std::cin >> num_of_sem;
 
     std::vector<double> gpa(num_of_sem);
     std::vector<int> credits(num_of_sem);
 
+    // Loop over all semesters
     for (size_t i = 0; i < num_of_sem; i++)
     {
         bool valid_input = false;
         while (!valid_input)
         {
-            std::cout << "\nEnter the GPA for semester " << i + 1 << ": ";
-            std::cin >> gpa[i];
+            std::cout << "\nEnter the GPA for semester " << i + 1 << ": "; 
+            std::cin >> gpa[i]; // Get the GPA for the semester
 
             if (gpa[i] < 0 || gpa[i] > 10)
             {
-                std::cerr << "\033[31mInvalid input!\033[0m Enter value between 0 and 10.\n";
+                std::cerr << "\033[31mInvalid input!\033[0m Enter value between 0 and 10.\n"; // Error message for invalid input
             }
             else
             {
@@ -75,33 +79,36 @@ void cgpa_calc()
         }
 
         std::cout << "Enter the Credits for semester " << i + 1 << ": ";
-        std::cin >> credits[i];
+        std::cin >> credits[i]; // Get the credits for the semester
     }
 
     std::cout << "CGPA = " << calculate_cgpa(gpa, credits, num_of_sem) << "\n";
 }
 
+// Function to handle input and call the GPA calculation function
 void gpa_calc()
 {
     int num_of_courses;
 
+    // Get the number of courses
     std::cout << "Enter number of courses: ";
     std::cin >> num_of_courses;
 
     std::vector<double> grades(num_of_courses);
     std::vector<int> credits(num_of_courses);
 
+    // Loop through all the courses
     for (size_t i = 0; i < num_of_courses; i++)
     {
         bool valid_input = false;
         while (!valid_input)
         {
             std::cout << "\nEnter the Grade for course " << i + 1 << ": ";
-            std::cin >> grades[i];
+            std::cin >> grades[i]; // Get the grade for the course
 
             if (grades[i] < 0 || grades[i] > 10)
             {
-                std::cerr << "\033[31mInvalid input!\033[0m Enter value between 0 and 10.\n";
+                std::cerr << "\033[31mInvalid input!\033[0m Enter value between 0 and 10.\n"; // Error message for invalid input
             }
             else
             {
@@ -110,7 +117,7 @@ void gpa_calc()
         }
 
         std::cout << "Enter the Credits for course " << i + 1 << ": ";
-        std::cin >> credits[i];
+        std::cin >> credits[i]; // Get the credits for the course
     }
     std::cout << "\nGPA = " << calculate_gpa(grades, credits, num_of_courses) << "\n";
 }
