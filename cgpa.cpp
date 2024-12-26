@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "cpga.hpp"
 
 int main(int argc, char *argv[])
@@ -16,8 +17,8 @@ int main(int argc, char *argv[])
         std::cout << "Enter number of Semesters: ";
         std::cin >> num_of_sem;
 
-        double gpa[num_of_sem]{};
-        int credits[num_of_sem]{};
+        std::vector<double> gpa(num_of_sem);
+        std::vector<int> credits(num_of_sem);
 
         for (size_t i = 0; i < num_of_sem; i++)
         {
@@ -50,8 +51,8 @@ int main(int argc, char *argv[])
         std::cout << "Enter number of courses: ";
         std::cin >> num_of_courses;
 
-        double grades[num_of_courses]{};
-        int credits[num_of_courses]{};
+        std::vector<double> grades(num_of_courses);
+        std::vector<int> credits(num_of_courses);
 
         for (size_t i = 0; i < num_of_courses; i++)
         {

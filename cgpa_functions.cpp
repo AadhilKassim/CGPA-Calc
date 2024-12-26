@@ -1,6 +1,8 @@
 #include <iostream>
+#include <vector>
 #include "cpga.hpp"
-double calculate_cgpa(double gpas[], int credits[], int num_semesters)
+
+double calculate_cgpa(const std::vector<double>& gpas, const std::vector<int>& credits, int num_semesters)
 {
     double total_weighted_gpa = 0;
     int total_credits = 0;
@@ -23,8 +25,7 @@ double calculate_cgpa(double gpas[], int credits[], int num_semesters)
     return total_weighted_gpa / total_credits;
 }
 
-
-double calculate_gpa(double grades[], int credits[], int num_courses) {
+double calculate_gpa(const std::vector<double>& grades, const std::vector<int>& credits, int num_courses) {
     double total_weighted_grade_points = 0;
     int total_credits = 0;
 
